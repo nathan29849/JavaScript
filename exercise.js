@@ -10,14 +10,13 @@ while(count <5){
     if(problem[problem.length - 1] == answer[0]) {
         alert("딩동댕~^_^");
         problem = answer;
-        count++;
         right++;
         console.log("ㅇ;");
     } else {
         alert("땡!")   
-        count++;
         wrong++;
     }
+    count++;
 }
 
 alert("총 5번의 기회가 끝나 게임을 종료합니다.")
