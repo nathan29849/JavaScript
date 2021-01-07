@@ -38,10 +38,20 @@ function handleSubmit(event){
     toDoInput.value = ""; // 왜 이 코드가 input 창에서 글씨를 사라지게 하는걸까? -> 비워줌으로써..? ㅇㅇ
 }
 
+// function something(toDo) {
+//     console.log(toDo.text);
+// }
+
 function loadToDos(){
     const loadedToDos = localStorage.getItem(TODOS_LS);
     if (loadedToDos !== null) {
-        
+        console.log(loadedToDos);
+        const parsedToDos = JSON.parse(loadedToDos);
+        console.log(parsedToDos);
+        parsedToDos.forEach(function(toDo){ // function을 호출하는 게 아니라 안에다 바로 만듦 (밖에다 호출해도 됨)
+            console.log(toDo.text); // 지금 만들 이 함수를 parsedToDos에 있는 것들 각각에 대해 실행해 줄 것이므로
+            paintToDo(toDo.text);
+        })
     }
 }
 
