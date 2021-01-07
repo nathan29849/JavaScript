@@ -6,6 +6,11 @@ const TODOS_LS = "toDos";
 
 const toDos = [];
 
+function deleteToDo(event) {
+    console.dir(event.target);
+    console.log(event.currentTarget);
+}
+
 function saveToDos(){
     // localStorage.setItem(TODOS_LS, toDos); // 이렇게 하면 [object Object],[object Object]... 이런식으로 저장됨 -> 자바스크립트의 data를 저장할 수 없음, string만 가능
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
@@ -17,6 +22,7 @@ function paintToDo(text){
     const span = document.createElement("span");
     const newId = toDos.length + 1;
     delBtn.innerText = "❌";
+    delBtn.addEventListener("click", deleteToDo); 
     span.innerText = text;
     li.appendChild(delBtn);
     li.appendChild(span);
