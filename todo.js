@@ -6,9 +6,17 @@ const TODOS_LS = "toDos";
 
 const toDos = [];
 
+function filterFn(toDo){
+    return toDo.id === 1;
+}
+
 function deleteToDo(event) {
-    console.dir(event.target);
-    console.log(event.currentTarget);
+    // console.log(event.target.parentNode);
+    // console.log(event.currentTarget.parentNode); // target과 currentTarget의 차이는?
+    const btn = event.target;
+    const li  = btn.parentNode;
+    toDoList.removeChild(li);
+    const cleanToDos = toDos.filter(filterFn); // 
 }
 
 function saveToDos(){
