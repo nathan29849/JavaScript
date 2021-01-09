@@ -4,7 +4,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-let toDos = [];
+let toDos = [];    // to do list!
 
 function filterFn(toDo){
     return toDo.id === 1;
