@@ -12,11 +12,11 @@ const IMG_NUMBER = 3;
 
 
 function paintImage(imgNumber){
-    const image = new Image();
+    const image = new Image(); // 이미지 객체를 생성하는 함수
     image.src = `https://nathan29849.github.io/JavaScript/images/${imgNumber + 1}.jpeg`;
     // console.log(number);
     // image.src = `image_${number}`;
-    body.appendChild(image);
+    body.appendChild(image); // 
     image.classList.add("bgImage");
     // image.addEventListener("loadend", handleImgLoad);
 } 
