@@ -2,30 +2,35 @@
     <title>WEB - JavaScript</title>
     <meta charset="urf-8">  
     <script>
-      function HandlerButton(self){
-        const target = document.querySelector('#target');
+      function setColor(color){
         let links = document.querySelectorAll('a');
-        if(self.dataset.mode === 'day'){
-          target.style.backgroundColor = 'white';
-          target.style.color = 'black';
-          self.dataset.mode = 'night';
-          self.value = 'day';
-          let i = 0;
-          while(i < links.length){
-            links[i].style.color = 'blue';
-            i++;
-          }
-        }
-        else{
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        self.dataset.mode = 'day';
-        self.value = 'night';
         let i = 0;
           while(i < links.length){
-            links[i].style.color = 'skyblue';
+            links[i].style.color = color;
             i++;
           }
+      }
+      function BodySetColor(color){
+        document.querySelector('#target').style.color = color;
+      }
+      function BodySetBackgroundColor(color){
+        document.querySelector('#target').style.backgroundColor = color;
+      }
+      function handlerButton(self){
+        const target = document.querySelector('#target');
+        if(self.dataset.mode === 'day'){
+          BodySetBackgroundColor('white');
+          BodySetColor('black');
+          self.dataset.mode = 'night';
+          self.value = 'day';
+          setColor('blue');
+        }
+        else{
+          BodySetBackgroundColor('black');
+          BodySetColor('white');
+          self.dataset.mode = 'day';
+          self.value = 'night';
+          setColor('powderblue');
         }
       }
     </script>
@@ -36,7 +41,7 @@
 <h1><a href="index.html">WEB</a></h1>
 
 <input type="button" value="night" onclick="
-  HandlerButton(this);
+  handlerButton(this);
 ">
   <ol>
     <li><a href="1.html">HTML</a></li>
