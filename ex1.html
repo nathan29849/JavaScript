@@ -1,6 +1,34 @@
 <head>
     <title>WEB - JavaScript</title>
     <meta charset="urf-8">  
+    <script>
+      function HandlerButton(self){
+        const target = document.querySelector('#target');
+        let links = document.querySelectorAll('a');
+        if(self.dataset.mode === 'day'){
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          self.dataset.mode = 'night';
+          self.value = 'day';
+          let i = 0;
+          while(i < links.length){
+            links[i].style.color = 'blue';
+            i++;
+          }
+        }
+        else{
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        self.dataset.mode = 'day';
+        self.value = 'night';
+        let i = 0;
+          while(i < links.length){
+            links[i].style.color = 'skyblue';
+            i++;
+          }
+        }
+      }
+    </script>
 </head>
 
  
@@ -8,22 +36,7 @@
 <h1><a href="index.html">WEB</a></h1>
 
 <input type="button" value="night" onclick="
-  const target = document.querySelector('#target');
-  let links = document.querySelectorAll('a');
-  if(this.dataset.mode === 'day'){
-    target.style.backgroundColor = 'white';
-    target.style.color = 'black';
-    this.dataset.mode = 'night';
-    this.value = 'day';
-    links.style.color = 'blue';
-  }
-  else{
-  target.style.backgroundColor = 'black';
-  target.style.color = 'white';
-  this.dataset.mode = 'day';
-  this.value = 'night';
-  links.style.color = 'skyblue';    
-  }
+  HandlerButton(this);
 ">
   <ol>
     <li><a href="1.html">HTML</a></li>
