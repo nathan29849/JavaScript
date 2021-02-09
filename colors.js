@@ -6,7 +6,7 @@ let Links = {
     //     links[i].style.color = color;
     //     i++;           
     // }
-    $('a').css('color', color);
+    $('a').css('color', color);  //jQuery
   }
 }
   // function setColor(color){
@@ -20,12 +20,12 @@ let Links = {
   let Body = {
             setColor: function(color){
             //     document.querySelector('#target').style.color = color;
-            $('#target').css('color', color);
+            $('#target').css('color', color); //jQuery
               },
             setBackgroundColor: function(color){
             //     document.querySelector('#target').style.backgroundColor = color;
-            $('#target').css('backgroundColor', color);
-            }
+            $('#target').css('backgroundColor', color); //jQuery
+            } 
         } 
   // function BodySetColor(color){
   //   document.querySelector('#target').style.color = color;
