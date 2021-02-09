@@ -1,11 +1,12 @@
 let Links = {
     setColor: function(color){
-    let links = document.querySelectorAll('a');
-    let i = 0;
-      while(i < links.length){
-        links[i].style.color = color;
-        i++;           
-    }
+    // let links = document.querySelectorAll('a');
+    // let i = 0;
+    //   while(i < links.length){
+    //     links[i].style.color = color;
+    //     i++;           
+    // }
+    $('a').css('color', color);
   }
 }
   // function setColor(color){
@@ -18,12 +19,13 @@ let Links = {
   // }
   let Body = {
             setColor: function(color){
-                document.querySelector('#target').style.color = color;
+            //     document.querySelector('#target').style.color = color;
+            $('#target').css('color', color);
               },
             setBackgroundColor: function(color){
-                document.querySelector('#target').style.backgroundColor = color;
+            //     document.querySelector('#target').style.backgroundColor = color;
+            $('#target').css('backgroundColor', color);
             }
-
         } 
   // function BodySetColor(color){
   //   document.querySelector('#target').style.color = color;
